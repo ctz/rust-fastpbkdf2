@@ -1,1 +1,6 @@
 language: rust
+
+script:
+- cargo build --verbose
+- cargo test --verbose
+- cd pbkdf2-bench && cargo run
