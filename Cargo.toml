@@ -2,6 +2,13 @@
 name = "fastpbkdf2"
 version = "0.1.0"
 authors = ["jpixton@gmail.com"]
+license = "CC0-1.0"
+readme = "README.md"
+homepage = "https://github.com/ctz/rust-fastpbkdf2"
+repository = "https://github.com/ctz/rust-fastpbkdf2"
+description = "A rust binding for fastpbkdf2.  This is a PBKDF2 with HMAC-SHA1, HMAC-SHA256 and HMAC-SHA512 and is faster than other implementations."
+keywords = ["pbkdf2", "fastpbkdf2" ]
+
 links = "fastpbkdf2"
 build = "build.rs"
 
