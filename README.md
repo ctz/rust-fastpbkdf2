@@ -13,13 +13,13 @@ pub fn pbkdf2_hmac_sha512(password: &[u8], salt: &[u8], iterations: u32, out: &m
 
 ## Performance
 
-Hash   | fastpbkdf2   | ring            | rust-crypto
+Hash   | rust-fastpbkdf2   | [ring](https://github.com/briansmith/ring)  | [rust-crypto](https://github.com/DaGenix/rust-crypto)
 -------|--------------|-----------------|----------------
 SHA1   | 380ms        | 5299ms (13.9x)  | 41015ms (108x)
 SHA256 | 855ms        | 8244ms (9.6x)  | 71521ms (84x)
 SHA512 | 1329ms       | 15172ms (11.4x) | 81378ms (61x)
 
-On Intel i3-2100T CPU @ 2.50GHz, 2<sup>20</sup> iterations, 64-bit mode.
+On Intel i3-2100T CPU @ 2.50GHz in 64-bit mode, 2<sup>20</sup> iterations.
 
 ## Building and testing
 
