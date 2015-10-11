@@ -1,0 +1,10 @@
+[package]
+name = "pbkdf2-bench"
+version = "0.1.0"
+authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
+
+[dependencies]
+time = "0.1"
+fastpbkdf2 = { git = "https://github.com/ctz/rust-fastpbkdf2" }
+ring = { git = "https://github.com/briansmith/ring" }
+rust-crypto = "0.2"
