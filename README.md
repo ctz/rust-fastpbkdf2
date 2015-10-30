@@ -25,6 +25,12 @@ On Intel i3-2100T CPU @ 2.50GHz in 64-bit mode, 2<sup>20</sup> iterations, `--re
 
 You'll need OpenSSL for `fastpbkdf2`.  `cargo build` builds, `cargo test` runs tests.
 
+### Windows
+
+You'll [need to provide an OpenSSL build to fastpbkdf2](https://github.com/ctz/fastpbkdf2/blob/master/WINDOWS.md#OpenSSL) (inside its submodule).
+This is unfortunately manual because it involves interacting with OpenSSL's build system,
+or finding suitable binaries.
+
 ## License
 [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
