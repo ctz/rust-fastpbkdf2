@@ -5,6 +5,9 @@ authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
 
 [dependencies]
 time = "0.1"
-fastpbkdf2 = { git = "https://github.com/ctz/rust-fastpbkdf2" }
-ring = { git = "https://github.com/briansmith/ring" }
-rust-crypto = "0.2"
+fastpbkdf2 = { path = "../"}
+ring = "0.11"
+pbkdf2 = "0.1"
+sha-1 = "0.4"
+sha2 = "0.6"
+hmac = "0.4"

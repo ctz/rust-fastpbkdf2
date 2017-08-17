@@ -38,46 +38,48 @@ fn fastpbkdf2_sha512() {
 
 // ring versions
 extern crate ring;
-use ring::{pbkdf2_hmac, digest};
+use ring::pbkdf2 as ring_pbkfd2;
+use ring::digest;
 
 fn ring_sha1() {
   let mut out = [0u8; 20];
-  pbkdf2_hmac::derive(&digest::SHA1, ITERATIONS as usize, PASSWORD, SALT, &mut out);
+  ring_pbkfd2::derive(&digest::SHA1, ITERATIONS, PASSWORD, SALT, &mut out);
 }
 
 fn ring_sha256() {
   let mut out = [0u8; 32];
-  pbkdf2_hmac::derive(&digest::SHA256, ITERATIONS as usize, PASSWORD, SALT, &mut out);
+  ring_pbkfd2::derive(&digest::SHA256, ITERATIONS, PASSWORD, SALT, &mut out);
 }
 
 fn ring_sha512() {
   let mut out = [0u8; 64];
-  pbkdf2_hmac::derive(&digest::SHA512, ITERATIONS as usize, PASSWORD, SALT, &mut out);
+  ring_pbkfd2::derive(&digest::SHA512, ITERATIONS, PASSWORD, SALT, &mut out);
 }
 
 // rust-crypto versions
-extern crate crypto;
-use crypto::pbkdf2;
-use crypto::hmac::Hmac;
-use crypto::sha2::{Sha256, Sha512};
-use crypto::sha1::Sha1;
+extern crate sha_1;
+extern crate sha2;
+extern crate hmac;
+extern crate pbkdf2;
+
+use pbkdf2::pbkdf2;
+use hmac::Hmac;
+use sha2::{Sha256, Sha512};
+use sha_1::Sha1;
 
 fn rustcrypto_sha1() {
   let mut out = [0u8; 20];
-  let mut mac = Hmac::new(Sha1::new(), PASSWORD);
-  pbkdf2::pbkdf2(&mut mac, SALT, ITERATIONS, &mut out);
+  pbkdf2::<Hmac<Sha1>>(PASSWORD, SALT, ITERATIONS as usize, &mut out);
 }
 
 fn rustcrypto_sha256() {
   let mut out = [0u8; 32];
-  let mut mac = Hmac::new(Sha256::new(), PASSWORD);
-  pbkdf2::pbkdf2(&mut mac, SALT, ITERATIONS, &mut out);
+  pbkdf2::<Hmac<Sha256>>(PASSWORD, SALT, ITERATIONS as usize, &mut out);
 }
 
 fn rustcrypto_sha512() {
   let mut out = [0u8; 64];
-  let mut mac = Hmac::new(Sha512::new(), PASSWORD);
-  pbkdf2::pbkdf2(&mut mac, SALT, ITERATIONS, &mut out);
+  pbkdf2::<Hmac<Sha512>>(PASSWORD, SALT, ITERATIONS as usize, &mut out);
 }
 
 fn main() {
