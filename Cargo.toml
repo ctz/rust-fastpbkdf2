@@ -1,6 +1,6 @@
 [package]
 name = "fastpbkdf2"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["jpixton@gmail.com"]
 license = "CC0-1.0"
 readme = "README.md"
@@ -17,8 +17,8 @@ name = "fastpbkdf2"
 path = "src/lib.rs"
 
 [dependencies]
-libc = "0.1"
+libc = "0.2"
 
 [build-dependencies]
-gcc = "0.3"
+cc = "1.0"
 
