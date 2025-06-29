@@ -2,9 +2,14 @@
 name = "pbkdf2-bench"
 version = "0.1.0"
 authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
+edition = "2018"
 
 [dependencies]
-time = "0.1"
-fastpbkdf2 = { git = "https://github.com/ctz/rust-fastpbkdf2" }
-ring = { git = "https://github.com/briansmith/ring" }
-rust-crypto = "0.2"
+# version 0.3 removed SteadyTime
+time = "0.2"
+fastpbkdf2 = { path = "../" }
+ring = "0.17"
+pbkdf2 = "0.12"
+sha-1 = "0.10"
+sha2 = "0.10"
+hmac = "0.12"
