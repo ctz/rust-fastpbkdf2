@@ -4,14 +4,14 @@ use libc::size_t;
 #[cfg(not(windows))]
 #[link(name = "fastpbkdf2")]
 #[link(name = "crypto")]
-extern {}
+extern "C" {}
 
 #[cfg(windows)]
 #[link(name = "fastpbkdf2")]
 #[link(name = "fastpbkdf2/openssl/lib/libeay32")]
 extern {}
 
-extern {
+extern "C" {
   fn fastpbkdf2_hmac_sha1(pw: *const u8, npw: size_t,
                           salt: *const u8, nsalt: size_t,
                           iterations: u32,
