@@ -25,6 +25,15 @@ On Intel i3-2100T CPU @ 2.50GHz in 64-bit mode, 2<sup>20</sup> iterations, `--re
 
 You'll need OpenSSL for `fastpbkdf2`.  `cargo build` builds, `cargo test` runs tests.
 
+Don't forget checking out the `fastpbkdf2` git submodule before building.
+
+Consider enabling CPU-specific optimizations such as [-C target-cpu=native](https://doc.rust-lang.org/rustc/codegen-options/index.html#target-cpu) if the compiled binaries are used locally or on a controlled machine type.
+
+### Linux
+
+OpenSSL libraries are typically available as either `openssl-dev`, `openssl-devel`, `libssl-dev` or similar package names.
+
+
 ### Windows
 
 You'll [need to provide an OpenSSL build to fastpbkdf2](https://github.com/ctz/fastpbkdf2/blob/master/WINDOWS.md#OpenSSL) (inside its submodule).
