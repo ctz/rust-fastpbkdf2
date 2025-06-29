@@ -7,7 +7,8 @@ readme = "README.md"
 homepage = "https://github.com/ctz/rust-fastpbkdf2"
 repository = "https://github.com/ctz/rust-fastpbkdf2"
 description = "A rust binding for fastpbkdf2.  This is a PBKDF2 with HMAC-SHA1, HMAC-SHA256 and HMAC-SHA512 and is faster than other implementations."
-keywords = ["pbkdf2", "fastpbkdf2" ]
+keywords = ["pbkdf2", "fastpbkdf2"]
+edition = "2018"
 
 links = "fastpbkdf2"
 build = "build.rs"
@@ -17,8 +18,7 @@ name = "fastpbkdf2"
 path = "src/lib.rs"
 
 [dependencies]
-libc = "0.1"
+libc = "0.2"
 
 [build-dependencies]
-gcc = "0.3"
-
+cc = "1.2"
