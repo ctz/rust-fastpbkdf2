@@ -1,8 +1,8 @@
-extern crate gcc;
+extern crate cc;
 
 #[cfg(not(windows))]
 fn main() {
-  gcc::Config::new()
+  cc::Build::new()
     .file("fastpbkdf2/fastpbkdf2.c")
     .include("fastpbkdf2/")
     .flag("-std=c99")
