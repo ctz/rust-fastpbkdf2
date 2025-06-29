@@ -3,7 +3,8 @@ all = []
 
 for i in range(1, 6):
     lines = open('out.%d' % i).readlines()
-    lines = lines[1:]
+    # TODO
+    # lines = lines[1:]
     lines = [l.strip() for l in lines]
     all.append(lines)
 
